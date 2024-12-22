@@ -6,6 +6,7 @@ let drawingSpaceSize = 600
 const gridContainer = document.querySelector(".gridContainer")
 gridContainer.style.height = `${drawingSpaceSize}px`
 gridContainer.style.width = `${drawingSpaceSize}px`
+
 cellMaker(rowsInitial, colsInitial)
 
 //making the functional board
@@ -20,6 +21,7 @@ function cellMaker(rows, cols) {
        //setting up cell style
        cell.className = "cell"
        cell.style.backgroundColor = "white"
+       cell.style.opacity = "0"
        cell.style.padding = `${(drawingSpaceSize / rows) / 2}px`
        cell.style.textAlign = "center"
        gridContainer.appendChild(cell)
@@ -27,7 +29,13 @@ function cellMaker(rows, cols) {
    }
 
    function onmouseHover(e) {
-      e.target.style.backgroundColor = "black"
+      e.target.style.backgroundColor = `rgb(${rgbRandomizer()})`
+      let currentOpacity = parseFloat(e.target.style.opacity) || 0;
+      e.target.style.opacity = `${currentOpacity + 0.1}`
+      
+      function rgbRandomizer() {
+         return `${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}`
+      }
    }
    
    cells = document.querySelectorAll(".cell")
