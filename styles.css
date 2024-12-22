@@ -26,3 +26,7 @@ body {
     align-items: center;
     flex-shrink: 0;
 }
+
+.sizeButton {
+    margin-bottom: 20px;
+}
