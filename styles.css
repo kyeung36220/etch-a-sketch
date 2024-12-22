@@ -1,0 +1,28 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(1, 1, 56);
+}
+
+.title {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color:white;
+    font-weight: bold;
+}
+
+.gridContainer {
+    display:flex;
+    flex-wrap: wrap;
+    background-color: grey;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
