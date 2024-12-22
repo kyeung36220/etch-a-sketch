@@ -48,7 +48,7 @@ function cellMaker(rows, cols) {
 function editSize() {
    while (true) {
       size = prompt("What resolution? (Max 100)")
-      if (size > 0 && size < 100) {
+      if (size > 0 && size <= 100) {
          break
       }
    }
